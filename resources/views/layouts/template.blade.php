@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="image/favicon.png" type="image/png">
-        <title>Hotel Hebat</title>
+        <link rel="icon" href="{{ asset('image/favicon.png') }}" type="image/png">
+        <title>{{ __('Hotel Hebat') }}</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('template/vendors/linericon/style.css') }}">
         <link rel="stylesheet" href="{{ asset('template/css/font-awesome.min.css') }}">
@@ -14,9 +14,7 @@
         <link rel="stylesheet" href="{{ asset('template/vendors/nice-select/css/nice-select.css') }}">
         <link rel="stylesheet" href="{{ asset('template/vendors/owl-carousel/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('template/css/bootstrap.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('css/all.css') }}"> --}}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('template/css/responsive.css') }}">
@@ -27,8 +25,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="{{ route('landing') }}"><h5>HOTEL HEBAT</h5></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="{{ route('landing') }}"><h5>{{ __('Hotel Hebat') }}</h5></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Basculer la navigation') }}">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -36,12 +34,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-
-                            <li class="nav-item"><a class="nav-link" href="{{ route('landing') }}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('landing') }}">{{ __('Accueil') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#facilities">{{ __('Installations') }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">{{ __('À propos') }}</a></li>
                             @guest
-                                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i> Login/Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i> {{ __('Connexion/Inscription') }}</a></li>
                             @else
                                 <li class="nav-item submenu dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -50,10 +47,9 @@
 
                                     <ul class="dropdown-menu">
                                         @if (Auth::user()->role == "customer")
-
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{ route('customer.transactions') }}"><i class="fas fa-exchange-alt"></i>
-                                                    List Transactions
+                                                    {{ __('Liste des Transactions') }}
                                                 </a>
                                             </li>
                                         @endif
@@ -62,7 +58,7 @@
                                             <a class="nav-link" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
-                                                <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
+                                                <i class="fas fa-sign-out-alt"></i> {{ __('Déconnexion') }}
                                             </a>
                                         </li>
 
@@ -83,25 +79,23 @@
         <footer class="footer-area section_gap">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4  col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">About Agency</h6>
-                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+                            <h6 class="footer_title">{{ __('À propos de l\'agence') }}</h6>
+                            <p>{{ __('Description de l\'agence') }}</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6 class="footer_title">Newsletter</h6>
-                            <p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>
-                            <div id="mc_embed_signup">
-
-                            </div>
+                            <h6 class="footer_title">{{ __('Newsletter') }}</h6>
+                            <p>{{ __('Description de la newsletter') }}</p>
+                            <div id="mc_embed_signup"></div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-footer-widget instafeed">
-                            <h6 class="footer_title">InstaFeed</h6>
+                            <h6 class="footer_title">{{ __('InstaFeed') }}</h6>
                             <ul class="list_style instafeed d-flex flex-wrap">
                                 <li><img src="{{ asset('template/image/instagram/Image-01.jpg') }}" alt=""></li>
                                 <li><img src="{{ asset('template/image/instagram/Image-02.jpg') }}" alt=""></li>
@@ -117,20 +111,16 @@
                 </div>
                 <div class="border_line"></div>
                 <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="col-lg-8 col-sm-12 footer-text m-0">{{ __('Copyright © :year Tous droits réservés', ['year' => date('Y')]) }}</p>
                     <div class="col-lg-4 col-sm-12 footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-label="{{ __('Facebook') }}"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-label="{{ __('Twitter') }}"></i></a>
+                        <a href="#"><i class="fa fa-dribbble" aria-label="{{ __('Dribbble') }}"></i></a>
+                        <a href="#"><i class="fa fa-behance" aria-label="{{ __('Behance') }}"></i></a>
                     </div>
                 </div>
             </div>
         </footer>
-
-
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

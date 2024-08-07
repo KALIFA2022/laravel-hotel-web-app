@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registration Hotel Hebat App</title>
+  <title>Inscription Hôtel Hebat</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,29 +20,28 @@
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
             <div class="register-logo">
-              <a class="h1">Hotel<span style="color: blue"> Hebat</span></a>
+              <a class="h1">Hôtel<span style="color: blue"> Hebat</span></a>
             </div>
         </div>
 
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Inscrivez-vous pour créer un nouveau compte</p>
 
       <form action="{{ route('register') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input type="text" placeholder="Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+          <input type="text" placeholder="Nom" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
           <div class="input-group-append">
-              <div class="input-group-text">
-                  <span class="fas fa-user"></span>
-                </div>
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
             </div>
-            @error('name')
-              <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-              </span>
-            @enderror
+          </div>
+          @error('name')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </div>
 
         <div class="input-group mb-3">
@@ -54,45 +53,41 @@
           </div>
           @error('email')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
           @enderror
         </div>
 
         <div class="input-group mb-3">
-            <input type="text" placeholder="Phone Number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
-
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-phone"></span>
-                </div>
+          <input type="text" placeholder="Numéro de téléphone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
             </div>
-            @error('phone')
+          </div>
+          @error('phone')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
-            @enderror
+          @enderror
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+          <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe" name="password" required autocomplete="new-password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
           @error('password')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
           @enderror
-
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation" required autocomplete="new-password">
+          <input type="password" class="form-control" placeholder="Confirmez le mot de passe" name="password_confirmation" required autocomplete="new-password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -100,20 +95,20 @@
           </div>
         </div>
 
-        <p>Already have an account?<a href="{{ route('login') }}" class="text-center"><b> Login</b></a></p>
+        <p>Vous avez déjà un compte ? <a href="{{ route('login') }}" class="text-center"><b>Connexion</b></a></p>
 
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" required value="agree">
               <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
+                J'accepte les <a href="#">conditions</a>
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
           </div>
           <!-- /.col -->
         </div>

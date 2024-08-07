@@ -2,13 +2,13 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">ROOM LIST</h3>
+      <h3 class="card-title">LISTE DES CHAMBRES</h3>
       <!-- /.card-tools -->
       <div class="card-tools">
-          <!-- Buttons, labels, and many other things can be placed here! -->
-          <!-- Here is a label for example -->
+          <!-- Boutons, labels, et beaucoup d'autres choses peuvent être placés ici ! -->
+          <!-- Voici un label par exemple -->
 
-          <a href="{{ route('room.create') }}" class="badge badge-primary mr-2">add</a>
+          <a href="{{ route('room.create') }}" class="badge badge-primary mr-2">ajouter</a>
         </div>
     </div>
     <!-- /.card-header -->
@@ -17,9 +17,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Room Type</th>
-                    <th>Number</th>
-                    <th>Status</th>
+                    <th>Type de Chambre</th>
+                    <th>Numéro</th>
+                    <th>Statut</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -31,20 +31,20 @@
                         <td>{{ $data->number }}</td>
                         <td>
                             @if ($data->status == 'v')
-                                Available
+                                Disponible
                             @elseif ($data->status == 'o')
-                                Occupied
+                                Occupée
                             @elseif ($data->status == 'r')
-                                Reserved
+                                Réservée
                             @elseif ($data->status == 'os')
-                                Out of Service
+                                Hors Service
                             @endif
                             {{-- {{ $data->status }} --}}
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('room.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="{{ route('room.delete', $data->id) }}" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="{{ route('room.edit', $data->id) }}" class="btn btn-sm btn-warning">Modifier</a>
+                                <a href="{{ route('room.delete', $data->id) }}" onclick="return confirm('Êtes-vous sûr?')" class="btn btn-sm btn-danger">Supprimer</a>
                             </div>
                         </td>
                     </tr>
@@ -52,7 +52,6 @@
             </tbody>
         </table>
     </div>
-
     <!-- /.card-footer -->
   </div>
 

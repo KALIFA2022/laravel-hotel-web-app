@@ -7,7 +7,7 @@
         <div class="section-heading">
             <h2>
                 <center>
-                    Invoice {{ ucfirst($pay->type) }}
+                    Facture {{ ucfirst($pay->type) }}
                 </center>
             </h2>
         </div>
@@ -35,20 +35,20 @@
             @if(app('router')->getRoutes()->match(app('request')->create(URL::previous()))->getName() == 'customer.transactions')
                 <div class="btn-group">
 
-                    <a href="{{ url()->previous() }}" class="btn btn-sm btn-warning mt-2">Back</a>
-                    <button type="button" class="btn btn-sm btn-success  mt-2" data-toggle="modal" data-target="#uploadProof">
-                        Upload Bukti
+                    <a href="{{ url()->previous() }}" class="btn btn-sm btn-warning mt-2">Retour</a>
+                    <button type="button" class="btn btn-sm btn-success mt-2" data-toggle="modal" data-target="#uploadProof">
+                        Télécharger la Preuve
                     </button>
                 </div>
             @else
             <div class="mt-2 col-md-3">
 
                 <div class="btn-group">
-                    <a href="{{ route('landing') }}" class="btn btn-sm btn-warning ">Back To Home</a>
-                    <a href="{{ route('customer.transactions') }}" class="btn btn-sm btn-primary ">List Transactions</a>
+                    <a href="{{ route('landing') }}" class="btn btn-sm btn-warning ">Retour à l'accueil</a>
+                    <a href="{{ route('customer.transactions') }}" class="btn btn-sm btn-primary ">Liste des Transactions</a>
                 </div>
-                <button type="button" class="btn btn-sm btn-success  mt-2" data-toggle="modal" data-target="#uploadProof">
-                    Upload Proof
+                <button type="button" class="btn btn-sm btn-success mt-2" data-toggle="modal" data-target="#uploadProof">
+                    Télécharger la Preuve
                 </button>
             </div>
 
@@ -59,7 +59,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="uploadProofLabel">Upload your payment proof</h5>
+                    <h5 class="modal-title" id="uploadProofLabel">Téléchargez votre preuve de paiement</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -72,8 +72,8 @@
                     <div class="form-row">
 
                         <div class="form-group col-md-12">
-                            <label for="foto">Proof Image</label>
-                            <input id="foto" name="foto" type="file" class="form-control @error('foto') is-invalid @enderror"  value="{{ old('foto') }}" required autocomplete="foto" autofocus>
+                            <label for="foto">Image de Preuve</label>
+                            <input id="foto" name="foto" type="file" class="form-control @error('foto') is-invalid @enderror" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
 
                             @error('foto')
                             <span class="invalid-feedback" role="alert">
@@ -84,9 +84,9 @@
                     </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button>
 
-                    <button type="submit" class="btn btn-sm btn-primary">Pay</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Payer</button>
                 </div>
             </form>
         </div>

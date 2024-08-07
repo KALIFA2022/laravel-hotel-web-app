@@ -23,9 +23,9 @@
 
 <table width='100%' cellspacing='0' cellpadding='0'>
     <tr>
-        <td valign='top' width='35%' style='font-size:12px;'>Client Name : {{ $data->user->name }}<br/><br/></td>
+        <td valign='top' width='35%' style='font-size:12px;'>Nom du Client : {{ $data->user->name }}<br/><br/></td>
         <td valign='top' width='35%'></td>
-        <td valign='top' width='30%' style='font-size:12px;'>Transaction ID : {{$data->id}}<br/></td>
+        <td valign='top' width='30%' style='font-size:12px;'>ID de la Transaction : {{$data->id}}<br/></td>
     </tr>
 </table>
 
@@ -37,11 +37,11 @@
 
 <table width='100%' cellspacing='0' cellpadding='2' border='1' bordercolor='#CCCCCC'>
     <tr>
-        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Room Type </strong></td>
-        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Price/Room </strong></td>
-        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Check In </strong></td>
-        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Check Out </strong></td>
-        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Total Room </strong></td>
+        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Type de Chambre</strong></td>
+        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Prix/Chambre</strong></td>
+        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Check In</strong></td>
+        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Check Out</strong></td>
+        <td bordercolor='#ccc' bgcolor='#f2f2f2' style='font-size:12px;'><strong>Total Chambres</strong></td>
     </tr>
     <tr style="display:none;">
         <td colspan="*">
@@ -102,8 +102,8 @@
 <table width='100%' height='50'><tr><td style='font-size:12px;text-align:justify;'></td></tr></table><br><br><br>
 <table  width='100%' cellspacing='0' cellpadding='2'>
     <tr>
-        <td width='33%' style='border-top:double medium #CCCCCC;font-size:12px;' valign='top' ><b>HOTEL<span style="color: blue"> HEBAT</span></b><br/>Jl. Otto Iskandardinata, Kabupaten Garut, Jawa Barat<br/>Phone: +62-896-3070-6721<br/></td>
-        <td valign='top' width='34%' style='border-top:double medium #CCCCCC;font-size:12px;' align='right'>Invoice Hotel<br/></td>
+        <td width='33%' style='border-top:double medium #CCCCCC;font-size:12px;' valign='top' ><b>HOTEL<span style="color: blue"> HEBAT</span></b><br/>Jl. Otto Iskandardinata, Kabupaten Garut, Jawa Barat<br/>Téléphone : +62-896-3070-6721<br/></td>
+        <td valign='top' width='34%' style='border-top:double medium #CCCCCC;font-size:12px;' align='right'>Facture Hôtel<br/></td>
       </tr>
 </table>
 </body>

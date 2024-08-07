@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">HOTEL FACILITY EDIT</h3>
+      <h3 class="card-title">MODIFICATION DE L'ÉQUIPEMENT DE L'HÔTEL</h3>
 
     </div>
     <div class="card-body">
@@ -11,7 +11,7 @@
             @csrf
             @method('patch')
             <div class="form-group">
-                <label for="facility_name">Facility Name</label>
+                <label for="facility_name">Nom de l'équipement</label>
                 <input id="facility_name" value="{{ $data->facility_name }}" name="facility_name" type="text" class="form-control @error('facility_name') is-invalid @enderror" value="{{ old('facility_name') }}" required autocomplete="facility_name" autofocus>
 
                 @error('facility_name')
@@ -34,7 +34,7 @@
             <div class="form-group float-right row mb-0">
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('update') }}
+                        {{ __('mettre à jour') }}
                     </button>
 
                 </div>

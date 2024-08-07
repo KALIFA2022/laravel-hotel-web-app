@@ -2,9 +2,9 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">HOTEL FACILITY LIST</h3>
+      <h3 class="card-title">LISTE DES ÉQUIPEMENTS DE L'HÔTEL</h3>
       <div class="card-tools">
-          <a href="{{ route('hotelfacility.create') }}" class="badge badge-primary mr-2">add</a>
+          <a href="{{ route('hotelfacility.create') }}" class="badge badge-primary mr-2">ajouter</a>
         </div>
     </div>
     <div class="card-body">
@@ -12,8 +12,8 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Facility Name</th>
-                    <th>Facility Description</th>
+                    <th>Nom de l'équipement</th>
+                    <th>Description de l'équipement</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -25,8 +25,8 @@
                         <td>{{ $dt->detail }}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('hotelfacility.edit', $dt->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="{{ route('hotelfacility.delete', $dt->id) }}" onclick="return confirm('Yakin?')" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="{{ route('hotelfacility.edit', $dt->id) }}" class="btn btn-sm btn-warning">Modifier</a>
+                                <a href="{{ route('hotelfacility.delete', $dt->id) }}" onclick="return confirm('Êtes-vous sûr ?')" class="btn btn-sm btn-danger">Supprimer</a>
                             </div>
                         </td>
                     </tr>

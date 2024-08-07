@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ 'Hotel Hebat' }}</title>
+    <title>{{ __('Hotel Hebat') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -27,9 +27,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('#home') }}">
-                    Hotel Hebat
+                    {{ __('Hotel Hebat') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Basculer la navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -46,46 +46,46 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
                             @if (Auth::user()->role == 'admin')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('roomtype.index') }}">{{ __('Tipe Kamar') }}</a>
+                                    <a class="nav-link" href="{{ route('roomtype.index') }}">{{ __('Types de chambres') }}</a>
                                 </li>
 
                             @elseif(Auth::user()->role == 'resepsionis')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('receptionis.logs') }}">{{ __('Logs') }}</a>
+                                    <a class="nav-link" href="{{ route('receptionis.logs') }}">{{ __('Journaux') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('receptionis.checkin') }}">{{ __('Check In') }}</a>
+                                    <a class="nav-link" href="{{ route('receptionis.checkin') }}">{{ __('Enregistrement') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('receptionis.checkin.pdata') }}">{{ __('Check In with Personal Data') }}</a>
+                                    <a class="nav-link" href="{{ route('receptionis.checkin.pdata') }}">{{ __('Enregistrement avec données personnelles') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('receptionis.reservations') }}">{{ __('Reservations') }}</a>
+                                    <a class="nav-link" href="{{ route('receptionis.reservations') }}">{{ __('Réservations') }}</a>
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#kamar">{{ __('Kamar') }}</a>
+                                    <a class="nav-link" href="#kamar">{{ __('Chambres') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#fasilitas">{{ __('Fasilitas') }}</a>
+                                    <a class="nav-link" href="#fasilitas">{{ __('Installations') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#tentang">{{ __('Tentang') }}</a>
+                                    <a class="nav-link" href="#tentang">{{ __('À propos') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#kontak">{{ __('Kontak') }}</a>
+                                    <a class="nav-link" href="#kontak">{{ __('Contact') }}</a>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">
@@ -97,7 +97,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Déconnexion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

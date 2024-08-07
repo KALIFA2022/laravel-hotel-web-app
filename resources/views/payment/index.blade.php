@@ -9,24 +9,23 @@
         <div class="section-heading">
           <h2>
               <center>
-                  Pembayaran Kamar
+                  Paiement de Chambre
               </center>
             </h2>
         </div>
       </div>
-
 
       <div class="col-md-12">
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr class="text-center">
-                                <th>Nomor Kamar</th>
-                                <th>Type Kamar</th>
-                                <th>Jumlah Pesanan</th>
-                                <th>Total Malam</th>
-                                <th>Harga Permalam</th>
-                                <th>Total Harga</th>
+                                <th>Numéro de Chambre</th>
+                                <th>Type de Chambre</th>
+                                <th>Nombre de Réservations</th>
+                                <th>Total de Nuits</th>
+                                <th>Prix par Nuit</th>
+                                <th>Prix Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,13 +43,13 @@
 
                 <div>
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#payType">
-                        Pay
+                        Payer
                     </button>
                     <div class="modal fade" id="payType" tabindex="-1" role="dialog" aria-labelledby="payTypeLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="payTypeLabel">Select Payment Type</h5>
+                                    <h5 class="modal-title" id="payTypeLabel">Sélectionnez le Type de Paiement</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -76,9 +75,9 @@
                                     </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button>
 
-                                    <button type="submit" class="btn btn-sm btn-primary">Pay</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Payer</button>
                                 </div>
                             </form>
                         </div>

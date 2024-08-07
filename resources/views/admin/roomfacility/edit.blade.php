@@ -2,13 +2,13 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">ROOM FACILITY EDIT</h3>
+      <h3 class="card-title">MODIFIER L'INSTALLATION DE CHAMBRE</h3>
       <!-- /.card-tools -->
       <div class="card-tools">
-          <!-- Buttons, labels, and many other things can be placed here! -->
-          <!-- Here is a label for example -->
+          <!-- Boutons, labels, et beaucoup d'autres choses peuvent être placés ici ! -->
+          <!-- Voici un label par exemple -->
 
-          {{-- <a href="{{ route('admin.facility.room.add') }}" class="badge badge-primary mr-2">add</a> --}}
+          {{-- <a href="{{ route('admin.facility.room.add') }}" class="badge badge-primary mr-2">ajouter</a> --}}
         </div>
     </div>
     <!-- /.card-header -->
@@ -18,7 +18,7 @@
             @csrf
             @method('patch')
             <div class="form-group">
-                <label for="facility_name">Facility Name</label>
+                <label for="facility_name">Nom de l'installation</label>
                 <input id="facility_name" name="facility_name" value="{{$data->facility_name}}" type="text" class="form-control @error('facility_name') is-invalid @enderror" value="{{ old('facility_name') }}" required autocomplete="facility_name" autofocus>
 
                 @error('facility_name')
@@ -31,7 +31,7 @@
             <div class="form-group float-right row mb-0">
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('Update') }}
+                        {{ __('Mettre à jour') }}
                     </button>
 
                 </div>
@@ -41,6 +41,5 @@
     </div>
     <!-- /.card-footer -->
   </div>
-
 
 @endsection

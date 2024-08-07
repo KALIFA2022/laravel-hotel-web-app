@@ -2,13 +2,13 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">ROOM EDIT</h3>
+      <h3 class="card-title">MODIFIER LA CHAMBRE</h3>
       <!-- /.card-tools -->
       <div class="card-tools">
-          <!-- Buttons, labels, and many other things can be placed here! -->
-          <!-- Here is a label for example -->
+          <!-- Boutons, labels, et beaucoup d'autres choses peuvent être placés ici ! -->
+          <!-- Voici un label par exemple -->
 
-          {{-- <a href="{{ route('admin.room.room.add') }}" class="badge badge-primary mr-2">add</a> --}}
+          {{-- <a href="{{ route('admin.room.room.add') }}" class="badge badge-primary mr-2">ajouter</a> --}}
         </div>
     </div>
     <!-- /.card-header -->
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="number">Number</label>
+                    <label for="number">Numéro</label>
                     <input id="number" value="{{ $data->number }}" name="number" type="text" class="form-control @error('number') is-invalid @enderror" value="{{ old('number') }}" required autocomplete="number" autofocus>
 
                     @error('number')
@@ -46,12 +46,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="status">Status</label>
+                <label for="status">Statut</label>
                 <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" value="{{ old('status') }}" required autocomplete="status" autofocus>
-                    <option {{ $data->status == "a" ? 'selected' : ''}} value="a">Available</option>
-                    <option {{ $data->status == "r" ? 'selected' : ''}} value="r">Reserve</option>
-                    <option {{ $data->status == "o" ? 'selected' : ''}} value="o">Occupied</option>
-                    <option {{ $data->status == "os" ? 'selected' : ''}} value="os">Out of Service</option>
+                    <option {{ $data->status == "a" ? 'selected' : ''}} value="a">Disponible</option>
+                    <option {{ $data->status == "r" ? 'selected' : ''}} value="r">Réservé</option>
+                    <option {{ $data->status == "o" ? 'selected' : ''}} value="o">Occupé</option>
+                    <option {{ $data->status == "os" ? 'selected' : ''}} value="os">Hors Service</option>
                 </select>
                 @error('status')
                     <span class="invalid-feedback" role="alert">
@@ -60,11 +60,10 @@
                 @enderror
             </div>
 
-
             <div class="form-group float-right row mb-0">
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('Post') }}
+                        {{ __('Poster') }}
                     </button>
 
                 </div>
@@ -74,6 +73,5 @@
     </div>
     <!-- /.card-footer -->
   </div>
-
 
 @endsection

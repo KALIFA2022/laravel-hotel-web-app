@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
-    @hasSection ('title')
+    @hasSection('title')
         @yield('title')
     @else
         Hotel Hebat App
@@ -43,16 +43,13 @@
         <img class="animation__shake" src="{{asset('images/logo.png')}}" height="60" width="60">
     </div>
 
-
-
     @include('layouts.adminlte-navbar')
     @include('layouts.adminlte-sidebar')
-
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
-
+            <!-- Header content goes here -->
         </div>
         <!-- /.content-header -->
 
